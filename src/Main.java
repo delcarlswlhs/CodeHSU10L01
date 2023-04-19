@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         System.out.println(factorial(3));
@@ -47,6 +48,14 @@ public class Main {
         else{
             return arrayIn[n-1] + sumArray(arrayIn, n-1);
         }
+    }
+
+    public static int sumArray2(int[] arr){
+        if(arr.length == 1){
+            return arr[arr.length-1];
+        }
+        int[] temp = Arrays.copyOf(arr, arr.length-1);
+        return arr[arr.length - 1] + sumArray2(temp);
     }
 
 }
